@@ -1,19 +1,32 @@
+// @ts-check
+
 import js from '@eslint/js'
 import globals from 'globals'
+import eslint from '@eslint/js'
+import tseslint from 'typescript-eslint'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
-export default [
-  { ignores: ['dist'] },
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.strict,
+  tseslint.configs.stylistic,
   {
-    files: ['**/*.{js,jsx}'],
+    ignores: ['dist'],
+  },
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+      parser: tseslint.parser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
         sourceType: 'module',
+        ecmaFeatures: { jsx: true },
       },
     },
     plugins: {
@@ -29,5 +42,5 @@ export default [
         { allowConstantExport: true },
       ],
     },
-  },
-]
+  }
+)
