@@ -1,12 +1,29 @@
-# React + Vite
+# Hangtime
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hangtime** is a simple scheduling tool for friends to find the best time to hang out. The organiser picks a few date options, shares a link, and everyone selects the dates they're free. Hangtime shows which date works best for the group — no more endless group chats.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React + TypeScript** – Frontend UI
+- **Styled Components** – Styling with scoped CSS-in-JS
+- **Express.js** – Backend server
+- **SQLite** – Lightweight relational database
+- **Jest + React Testing Library** – Unit and component testing
+- **Vite** – Fast development and build tooling
 
-## Expanding the ESLint configuration
+## Running Hangtime locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/anaherawashere/hangtime.git
+cd hangtime
+npm install
+npm run dev
+npm test
+```
+
+## Stretch goals
+
+- Allow users to remove or reorder proposed dates
+- Select from a calendar rather than date inputs
+- User suggest a date
+- Calendar integration (Google/Apple)
